@@ -16,20 +16,19 @@ var ApplicationDevoirs = {
         // Hash trouvé dans l'url.
         let ancre = window.location.hash;
         // Si pas d'ancre alors on ouvre la page de la liste des devoirs.
-        /*if (!ancre){
+        if (!ancre){
             this.vue = new ListeDevoirsVue(this.devoirs);
 
-        }else if (ancre.match(/^#ajouter-devoir/)){
+        /*}else if (ancre.match(/^#ajouter-devoir/)){
             this.ajouterCadeauVue = new AjouterCadeauVue();
-            this.ajouterCadeauVue.afficher();
+            this.ajouterCadeauVue.afficher();*/
         }else{
             var type = ancre.match(/^#devoir\/([0-9]+)/);
-            var idCadeau = type[1];
-            var cadeau = this.devoirDAO.getDevoir(idCadeau);
-            this.vue = new CadeauVue(cadeau);
-        }*/
+            var idDevoir = type[1];
+            var devoir = this.devoirDAO.getDevoir(idDevoir);
+            this.vue = new DetailsDevoirVue(devoir);
+        }
 
-        this.vue = new ListeDevoirsVue(this.devoirs);
         this.vue.afficher();
     }
 };
