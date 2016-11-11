@@ -10,6 +10,7 @@
      <style>
          .titrePage{
              text-align: center;
+             margin: 5rem;
          }
 
          .ul-liste-devoir{
@@ -17,6 +18,7 @@
              padding: 0.5rem;
              margin-left: 50rem;
              margin-right: 50rem;
+             margin-bottom: 5rem;
              text-align: center;
              border-radius: 0.1rem;
          }
@@ -79,6 +81,33 @@
              margin-left: 10rem;
          }
 
+         .lienAjoutDevoir {
+             text-align: center;
+             font-size: 2rem;
+
+         }
+
+         .lienAjoutDevoir > a {
+             padding: 0.1rem;
+             background-color: #2b2d2f;
+             border: solid #2b2d2f;
+             border-radius: 10px;
+         }
+
+         .lienAjoutDevoir > a:hover {
+             color: #4cae4c;
+             border: solid #3c3c3c;
+             text-decoration: none;
+             background-color: #3c3c3c;
+         }
+
+         .formAjoutDevoir {
+             font-size: 2rem;
+             margin-left: 60rem;
+             margin-right: 60rem;
+             margin-top: 20rem;
+         }
+
      </style>
  </head>
  <body>
@@ -89,6 +118,9 @@
  <script id="page-liste-devoir" type="text/html">
      <h1 class="titrePage h1">Liste des devoirs</h1>
      <ul id="ul-liste-devoir" class="ul-liste-devoir"></ul>
+     <div class="lienAjoutDevoir">
+         <a href="#ajouter-devoir" >Ajouter un nouveau devoir</a>
+     </div>
  </script>
 
 <script id="item-devoir" type="text/html">
@@ -108,13 +140,31 @@
          </div>
          <a href="">Retour à la liste des devoirs</a>
      </div>
+ </script>
 
+ <script type="text/html" id="ajouter-devoir-vue" class="AjouterDevoirVue">
+     <div class="form-group formAjoutDevoir">
+         <form class="">
+             <label for="champs-nom">Nom : </label>
+             <input type="text" id="champs-nom" class="form-control"/>
+             <br>
+             <label for="champs-matiere">Matière : </label>
+             <input type="text" id="champs-matiere" class="form-control"/>
+             <br>
+             <label for="champs-description">Description : <br></label>
+             <textarea id="champs-description" class="form-control"></textarea>
+             <br>
+             <input type="submit" value="Ajouter"/>
+         </form>
+         <a href="">Retour à la liste sans ajouter</a>
+     </div>
  </script>
 
 
  <script src="donnees/DevoirDAO.js"></script>
  <script src="vues/listeDevoirsVue.js"></script>
  <script src="vues/DetailsDevoirVue.js"></script>
+ <script src="vues/AjouterDevoirVue.js"></script>
  <script src="action/application.js"></script>
  <script src="js/bootstrap.js"></script>
 

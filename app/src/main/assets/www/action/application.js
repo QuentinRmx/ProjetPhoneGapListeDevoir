@@ -19,9 +19,8 @@ var ApplicationDevoirs = {
         if (!ancre){
             this.vue = new ListeDevoirsVue(this.devoirs);
 
-        /*}else if (ancre.match(/^#ajouter-devoir/)){
-            this.ajouterCadeauVue = new AjouterCadeauVue();
-            this.ajouterCadeauVue.afficher();*/
+        }else if (ancre.match(/^#ajouter-devoir/)){
+            this.vue = new AjouterDevoirVue();
         }else{
             var type = ancre.match(/^#devoir\/([0-9]+)/);
             var idDevoir = type[1];
