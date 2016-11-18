@@ -120,6 +120,7 @@
      <ul id="ul-liste-devoir" class="ul-liste-devoir"></ul>
      <div class="lienAjoutDevoir">
          <a href="#ajouter-devoir" >Ajouter un nouveau devoir</a>
+         <a href="#viderBdd">Vider bdd</a>
      </div>
  </script>
 
@@ -143,7 +144,7 @@
  </script>
 
  <script type="text/html" id="ajouter-devoir-vue" class="AjouterDevoirVue">
-     <div class="form-group formAjoutDevoir">
+     <div class="form-group formAjoutDevoir" id ="formAjoutDevoir">
          <form class="">
              <label for="champs-nom">Nom : </label>
              <input type="text" id="champs-nom" class="form-control"/>
@@ -154,13 +155,14 @@
              <label for="champs-description">Description : <br></label>
              <textarea id="champs-description" class="form-control"></textarea>
              <br>
-             <input type="submit" value="Ajouter"/>
+             <input id="boutonValider" type="submit" value="Sauvegarder"/>
          </form>
-         <a href="">Retour à la liste sans ajouter</a>
+         <a href="">Retour à la liste</a>
      </div>
  </script>
 
 
+ <script src="modeles/Devoir.js"></script>
  <script src="donnees/DevoirDAO.js"></script>
  <script src="vues/listeDevoirsVue.js"></script>
  <script src="vues/DetailsDevoirVue.js"></script>
