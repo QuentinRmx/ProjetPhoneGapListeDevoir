@@ -1,0 +1,97 @@
+.titrePage {
+    text-align: center;
+    margin: 5rem;
+}
+
+.ul-liste-devoir {
+    list-style-type: none;
+    padding: 0.5rem;
+    margin-left: 50rem;
+    margin-right: 50rem;
+    margin-bottom: 5rem;
+    text-align: center;
+    border-radius: 0.1rem;
+}
+
+.itemDevoir {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    background-color: #2b2d2f;
+    color: #337ab7;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.itemDevoir:hover {
+    background-color: #3c3c3c;
+}
+
+.lienDevoir:hover {
+    text-decoration: none;
+    background-color: #3c3c3c;
+    color: #4cae4c;
+}
+
+.descriptionDevoir {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.divDescriptionDevoir {
+    background-color: #2b2d2f;
+    border: solid #2b2d2f;
+    border-radius: 10px;
+    margin: 2rem 10rem;
+    height: 50rem;
+    padding: 0.5rem;
+}
+
+.divDescriptionDevoir>label {
+    font-size: 2rem;
+    text-decoration: underline;
+}
+
+body {
+    background-color: #0f0f0f;
+    color: #337ab7;
+}
+
+.pageDetailDevoir>a {
+    margin-left: 10rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.pageDetailDevoir>a:hover {
+    color: #4cae4c;
+}
+
+.matiereDevoir {
+    margin-left: 10rem;
+}
+
+.lienAjoutDevoir {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.lienAjoutDevoir>a {
+    padding: 0.1rem;
+    background-color: #2b2d2f;
+    border: solid #2b2d2f;
+    border-radius: 10px;
+}
+
+.lienAjoutDevoir>a:hover {
+    color: #4cae4c;
+    border: solid #3c3c3c;
+    text-decoration: none;
+    background-color: #3c3c3c;
+}
+
+.formAjoutDevoir {
+    font-size: 2rem;
+    margin-left: 60rem;
+    margin-right: 60rem;
+    margin-top: 20rem;
+}

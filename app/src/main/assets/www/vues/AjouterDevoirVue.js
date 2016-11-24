@@ -21,6 +21,7 @@ var AjouterDevoirVue = function(devoir){
     	this.actionAjouterDevoir(devoir);
     	window.location.hash = "";
     	event.preventDefault();
+		
     	
     }
 
