@@ -43,8 +43,8 @@ var DevoirDAO = function() {
     };
 
     this.getDevoir = function(id) {
-        for (let i in this.listeDevoirs) {
-            const item = this.listeDevoirs[i];
+        for (var i in this.listeDevoirs) {
+            var item = this.listeDevoirs[i];
             if (item.id == id) {
                 return item;
             }
@@ -53,12 +53,12 @@ var DevoirDAO = function() {
 
     this.reagirErreur = function(erreur) {
         console.log("ERREUR:SQL:" + erreur.code + ":" + erreur.message);
-        alert("ERREUR:SQL:" + erreur.code + ":" + erreur.message);
+        //alert("ERREUR:SQL:" + erreur.code + ":" + erreur.message);
     }
 
     this.reagirSucces = function() {
         console.log("SUCCES:SQL:");
-        alert("SUCCES:SQL:");
+        //alert("SUCCES:SQL:");
     }
 
     this.ajouterDevoir = function(devoir) {

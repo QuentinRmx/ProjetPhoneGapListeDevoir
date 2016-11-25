@@ -1,8 +1,24 @@
-
 var ApplicationDevoirs = {
 
+    initialize: function() {
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
+            document.addEventListener("deviceready", this.onDeviceReady, false);
+        } else {
+            this.onDeviceReady();
+        }
+    },
+
+    onDeviceReady: function() {
+
+        $(window).on('hashchange', function() {
+            this.naviguer();
+        });
+        setTimeout(function() { this.naviguer(); }, 500);
+    },
+
+
     // Méthode lancée lors du lancement pour initialiser
-    lancer : function () {
+    lancer: function() {
         this.devoirDAO = new DevoirDAO();
         this.devoirDAO.initialiser();
         //this.devoirs = this.devoirDAO.listerTousLesDevoirs();
@@ -13,19 +29,19 @@ var ApplicationDevoirs = {
     },
 
     // Fonction permettant d'ouvrir la bonne page en fonction du hash dans l'url.
-    naviguer : function () {
+    naviguer: function() {
         // Hash trouvé dans l'url.
-        let ancre = window.location.hash;
-        // Si pas d'ancre alors on ouvre la page de la liste des devoirs.
-        if (!ancre){
-            this.devoirDAO.listerTousLesDevoirs($.proxy(this.afficherTousLesDevoirs, this)); 
-        }else if (ancre.match(/^#ajouter-devoir/)){
+        var ancre = window.location.hash;
+        // Si pas d\'ancre alors on ouvre la page de la liste des devoirs.
+        if (!ancre) {
+            this.devoirDAO.listerTousLesDevoirs($.proxy(this.afficherTousLesDevoirs, this));
+        } else if (ancre.match(/^#ajouter-devoir/)) {
             this.vue = new AjouterDevoirVue(null);
-            this.vue.afficher($.proxy(this.sauvegarderNouveauDevoir, this)); 
-        }else if (ancre.match(/^#viderBdd/)){
+            this.vue.afficher($.proxy(this.sauvegarderNouveauDevoir, this));
+        } else if (ancre.match(/^#viderBdd/)) {
             this.devoirDAO.viderBdd();
             window.location.hash = "";
-        }else{
+        } else {
             var type = ancre.match(/^#devoir\/([0-9]+)/);
             var idDevoir = type[1];
             var devoir = this.devoirDAO.getDevoir(idDevoir);
@@ -34,14 +50,14 @@ var ApplicationDevoirs = {
         }
     },
 
-    sauvegarderNouveauDevoir : function(devoir){
+    sauvegarderNouveauDevoir: function(devoir) {
         this.devoirDAO.ajouterDevoir(devoir);
     },
-  
-  afficherTousLesDevoirs : function(listeDevoirs){
-    this.vue = new ListeDevoirsVue(listeDevoirs);
-    this.vue.afficher();      
-  }
+
+    afficherTousLesDevoirs: function(listeDevoirs) {
+        this.vue = new ListeDevoirsVue(listeDevoirs);
+        this.vue.afficher();
+    }
 };
 
 ApplicationDevoirs.lancer();

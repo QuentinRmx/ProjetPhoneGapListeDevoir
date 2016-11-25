@@ -1,4 +1,4 @@
-let TetherBase;
+var TetherBase;
 if (typeof TetherBase === 'undefined') {
   TetherBase = {modules: []};
 }

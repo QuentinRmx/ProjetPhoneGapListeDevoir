@@ -6,8 +6,8 @@
 .ul-liste-devoir {
     list-style-type: none;
     padding: 0.5rem;
-    margin-left: 50rem;
-    margin-right: 50rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     margin-bottom: 5rem;
     text-align: center;
     border-radius: 0.1rem;
@@ -41,8 +41,8 @@
     background-color: #2b2d2f;
     border: solid #2b2d2f;
     border-radius: 10px;
-    margin: 2rem 10rem;
-    height: 50rem;
+    margin: 2rem 1rem;
+    height: 20rem;
     padding: 0.5rem;
 }
 
@@ -57,7 +57,7 @@ body {
 }
 
 .pageDetailDevoir>a {
-    margin-left: 10rem;
+    margin-left: 2rem;
     font-size: 2rem;
     font-weight: bold;
 }
@@ -67,7 +67,7 @@ body {
 }
 
 .matiereDevoir {
-    margin-left: 10rem;
+    margin-left: 2rem;
 }
 
 .lienAjoutDevoir {
@@ -91,7 +91,7 @@ body {
 
 .formAjoutDevoir {
     font-size: 2rem;
-    margin-left: 60rem;
-    margin-right: 60rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
     margin-top: 20rem;
 }
